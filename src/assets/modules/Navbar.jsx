@@ -34,18 +34,31 @@ function Navbar() {
       <Box
         w="full"
         bg="#000"
-        h="80px"
+        h={{ base: "150px", md: "100px" }}
         display="flex"
         alignItems="center"
         margin="auto"
       >
-        <Box display="flex" w="90%" alignItems="center" margin="auto">
-          <Box w="15%">
+        <Box
+          display="flex"
+          flexDirection={{ base: "column", md: "row" }}
+          w="90%"
+          h="full"
+          alignItems="center"
+          margin="auto"
+          justifyContent={{ base: "space-around", md: "space-between" }}
+        >
+          <Box
+            w="15%"
+            h={{ base: "50%", md: "auto" }}
+            display="flex"
+            alignItems="center"
+          >
             <Link to="/">
-              <Image h="50px" src={logo} />
+              <Image w="80px" h="auto" src={logo} />
             </Link>
           </Box>
-          <Box w="85%">
+          <Box w="70%" h={{ base: "50%", md: "auto" }}>
             <form
               id="form"
               ref={ref}
@@ -55,6 +68,7 @@ function Navbar() {
               tabIndex={0}
             >
               <Input
+                w="full"
                 bg="#232323"
                 variant="unstyled"
                 border="none"
@@ -64,10 +78,9 @@ function Navbar() {
                 color="#fff"
                 _placeholder={{
                   color: "#fff",
-                  paddingX: 5,
                   backgroundImage: `url(${enter})`,
                   backgroundRepeat: "no-repeat",
-                  backgroundPosition: "63px center",
+                  backgroundPosition: "43px center",
                   opacity: 0.3,
                   backgroundSize: "18px",
                 }}
@@ -75,6 +88,7 @@ function Navbar() {
               />
             </form>
           </Box>
+          <Box w="15%"></Box>
         </Box>
       </Box>
     </header>
