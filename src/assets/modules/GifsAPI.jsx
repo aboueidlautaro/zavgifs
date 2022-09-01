@@ -52,14 +52,24 @@ function GifsAPI({
           {search !== "" && (
             <Box>
               {page === 0 ? (
-                <Button disabled onClick={prev}>
+                <Button
+                  margin={1}
+                  bg="#999898"
+                  color="#000"
+                  disabled
+                  onClick={prev}
+                >
                   Prev
                 </Button>
               ) : (
-                <Button onClick={prev}>Prev</Button>
+                <Button margin={1} bg="#D8D8D8" color="#3E3E3E" onClick={prev}>
+                  Prev
+                </Button>
               )}
 
-              <Button onClick={next}>Next</Button>
+              <Button margin={1} bg="#D8D8D8" color="#3E3E3E" onClick={next}>
+                Next
+              </Button>
             </Box>
           )}
         </FormControl>
