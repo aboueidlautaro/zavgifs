@@ -42,13 +42,15 @@ function Home() {
   }, [gifSearchUrl]);
 
   return (
-    <GifsAPI
-      resultss={resultss}
-      loading={loading}
-      error={errorMessage}
-      onClick={onClick}
-      search={search}
-    />
+    <>
+      <GifsAPI
+        resultss={resultss}
+        loading={loading}
+        error={errorMessage}
+        onClick={onClick}
+        search={search}
+      />
+    </>
   );
 }
 

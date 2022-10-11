@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { useState } from "react";
+import ButtonCopyImg from "../components/ButtonCopyImg";
 import noAvatar from "../static/images/no_avatar.png";
 
 import verified from "../static/images/verified.png";
@@ -25,13 +25,13 @@ function ArticleAPI({ article = [] }) {
         flexDirection={{ base: "column", md: "row" }}
         justifyContent="space-between"
         textColor="#FAF9F1"
-        w={{ base: "90%", sm: "80%", md: "65%" }}
+        w={{ base: "80%", sm: "90%", md: "85%" }}
         margin="auto"
         textAlign={"center"}
         paddingY={{ base: "0px", md: "90px" }}
         h="100%"
       >
-        <Box marginBottom={10} w={{ base: "100%", md: "35%" }}>
+        <Box marginBottom={5} w={{ base: "100%", md: "35%" }}>
           <Box
             marginY={10}
             paddingY={5}
@@ -116,14 +116,21 @@ function ArticleAPI({ article = [] }) {
             )}
           </Box>
         </Box>
-        <Box w={{ base: "100%", sm: "85%", md: "65%" }} h="auto" margin="auto">
+        <Box
+          h={{ base: "200px", sm: "auto" }}
+          w={{ base: "100%", sm: "85%", md: "65%" }}
+          margin="auto"
+        >
           <Image
+            borderRadius={15}
+            objectFit="contain"
             margin="auto"
             w="auto"
-            h={article.images?.downsized_medium.height}
+            maxH={article.images?.downsized_medium.height}
             src={article.images?.downsized_medium.url}
             alt={article.title}
           />
+          <ButtonCopyImg />
         </Box>
       </Box>
     </>
